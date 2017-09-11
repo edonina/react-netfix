@@ -18,8 +18,8 @@ module.exports = {
     },
 
     output: {
-      path: path.resolve(__dirname, './'),
-      filename: 'index.js'
+      filename: '[name].js',
+      path:  path.resolve(__dirname, 'dist')
     },
 
     devServer: {
