@@ -9,9 +9,7 @@ module.exports = {
 
     entry: {
         app: [
-            'react-hot-loader/patch',
-            'webpack-dev-server/client?http://localhost:3000',
-            './index.jsx',
+            './index.jsx'
         ],
         home: "./Home",
         order: "./Order",
@@ -26,7 +24,7 @@ module.exports = {
 
     devServer: {
         historyApiFallback: true,
-        hot: true,
+        inline: true,
         port: 3000
     },
     devtool: 'eval',
@@ -73,7 +71,6 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
@@ -93,6 +90,5 @@ module.exports = {
             filename: 'style.css',
             allChunks: true
         })
-    ],
-    watch: true
+    ]
 };
