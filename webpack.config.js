@@ -12,7 +12,11 @@ module.exports = {
             'react-hot-loader/patch',
             'webpack-dev-server/client?http://localhost:3000',
             './index.jsx',
-        ]
+        ],
+        home: "./Home",
+        order: "./Order",
+        profile: "./Profile",
+        vendor: ["lodash"]
     },
 
     output: {
@@ -72,6 +76,10 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ["common", 'vendor'],
+            minChunks: 2,
+        }),
         new webpack.DefinePlugin({
             PRODUCTION: false,
             BROWSER_SUPPORTS_HTML5: false,
