@@ -10,7 +10,7 @@ module.exports = {
     entry: {
         app: [
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://localhost:3000',
+            'webpack-hot-middleware/client',
             './index.jsx',
         ],
         home: "./Home",
@@ -24,11 +24,6 @@ module.exports = {
         path:  path.resolve(__dirname, 'dist')
     },
 
-    devServer: {
-        historyApiFallback: true,
-        hot: true,
-        port: 3000
-    },
     devtool: 'eval',
     //devtool: 'source-map',
 
@@ -93,6 +88,5 @@ module.exports = {
             filename: 'style.css',
             allChunks: true
         })
-    ],
-    watch: true
+    ]
 };
