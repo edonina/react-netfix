@@ -6,22 +6,16 @@ module.exports = {
 
     context: path.resolve(__dirname, 'src'),
 
-    entry: {
-        app: [
-            'react-hot-loader/patch',
-            'webpack-dev-server/client?http://localhost:3000',
-            './index.jsx',
-        ]
-    },
+    entry: './index.jsx',
 
     output: {
-        filename: '[name].js',
-        path:  path.resolve(__dirname, 'dist')
+      path: path.resolve(__dirname, './'),
+      filename: 'index.js'
     },
 
     devServer: {
         historyApiFallback: true,
-        hot: true,
+        inline: true,
         port: 3000
     },
 
@@ -60,13 +54,11 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new HtmlWebpackPlugin({
             title: 'Test',
             hash: true,
             template: './index.html'
         }),
-    ],
-    watch: true
+    ]
 };
