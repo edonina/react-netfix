@@ -9,7 +9,7 @@ module.exports = {
     entry: {
         app: [
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://localhost:3000',
+            'webpack-hot-middleware/client',
             './index.jsx',
         ]
     },
@@ -17,12 +17,6 @@ module.exports = {
     output: {
         filename: '[name].js',
         path:  path.resolve(__dirname, 'dist')
-    },
-
-    devServer: {
-        historyApiFallback: true,
-        hot: true,
-        port: 3000
     },
 
     resolve: {
@@ -66,7 +60,6 @@ module.exports = {
             title: 'Test',
             hash: true,
             template: './index.html'
-        }),
-    ],
-    watch: true
+        })
+    ]
 };
