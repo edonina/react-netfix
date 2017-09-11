@@ -10,7 +10,7 @@ module.exports = {
     entry: {
         app: [
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://localhost:3000',
+            'webpack-hot-middleware/client',
             './index.jsx',
         ],
         home: "./Home",
@@ -24,17 +24,13 @@ module.exports = {
         path:  path.resolve(__dirname, 'dist')
     },
 
-    devServer: {
-        historyApiFallback: true,
-        hot: true,
-        port: 3000
-    },
     devtool: 'eval',
     //devtool: 'source-map',
 
     resolve: {
         extensions: ['.js', '.jsx']
     },
+
     module: {
         rules: [{
             test: /\.jsx?$/,
@@ -42,34 +38,15 @@ module.exports = {
             loader: 'babel-loader',
             options: {
                 plugins: ["transform-react-jsx"]/*,
-                presets: ['env']*/
+                 presets: ['env']*/
             }
-        },{
+        }, {
             test: /\.scss/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
                 use: ['css-loader', 'sass-loader']
             })
-            /* {
-            test: /\.css$/,
-            use: [
-                'style-loader',
-                {
-                    loader: 'css-loader',
-                    options: {
-                        modules: true,
-                        camelCase: true,
-                        localIdentName: '[path][name]__[local]--[hash:base64:5]',
-                    },
-                }, {
-                    loader: 'typed-css-modules-loader',
-                    options: {
-                        camelCase: true,
-                        outDir: './dist/css-modules'
-                    },
-                }
-            ]
-        }*/}]
+        }]
     },
 
     plugins: [
@@ -93,6 +70,5 @@ module.exports = {
             filename: 'style.css',
             allChunks: true
         })
-    ],
-    watch: true
+    ]
 };
