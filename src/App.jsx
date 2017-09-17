@@ -1,14 +1,14 @@
 import React from 'react';
-import { Item } from './components/Item';
-import { Dropdown } from './components/Dropdown';
+import { Item } from './pages/Mainpage';
+import { Dropdown } from './pages/Videopage';
 
 export default class App extends React.Component {
 
     render() {
         return (
             <div>
-                <Item />
-                <Dropdown />
+                <Mainpage />
+                <Videopage />
             </div>
         )
     }
