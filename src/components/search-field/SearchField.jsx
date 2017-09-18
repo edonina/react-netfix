@@ -17,6 +17,7 @@ export class SearchField extends React.Component {
     render() {
         return (
             <div>
+                <p className="search-call-to-action">Find your movie</p>
                 <SearchInput />
                 <SearchButton />
                 <SearchFilter />

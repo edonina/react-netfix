@@ -13,10 +13,12 @@ export class Footer extends React.Component {
 
     render() {
         return (
-            <div className={s.oneTwo}>
+
+            <div className="logo-footer">netflixroulette</div>
+           /* <div className={s.oneTwo}>
                 <div onClick={() => this.setState({ isOpened: !this.state.isOpened })}>Switch</div>
                 {this.state.isOpened && <div>Content</div>}
-            </div>
+            </div>*/
         )
     }
 }

@@ -13,7 +13,7 @@ export class EmptyResults extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <div className="no-results">No films found</div>
         )
     }
 }

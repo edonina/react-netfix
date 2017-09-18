@@ -14,7 +14,7 @@ export class SearchResultsCount extends React.Component {
     render() {
         return (
             <div>
-
+                7 movies found
             </div>
         )
     }

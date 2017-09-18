@@ -13,8 +13,8 @@ export class ItemImage extends React.Component {
 
     render() {
         return (
-            <div>
-
+            <div className="filmImg">
+                <img src="#" />
             </div>
         )
     }

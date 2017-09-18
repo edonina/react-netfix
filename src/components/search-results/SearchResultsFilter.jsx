@@ -13,8 +13,10 @@ export class SearchResultsFilter extends React.Component {
 
     render() {
         return (
-            <div>
-
+            <div className="search-filter">
+                <p>sort by:</p>
+                <button>release date</button>
+                <button>rating</button>
             </div>
         )
     }

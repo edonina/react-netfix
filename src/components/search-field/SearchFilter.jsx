@@ -14,6 +14,9 @@ export class SearchFilter extends React.Component {
     render() {
         return (
             <div>
+                <p>Search by:</p>
+                <button>Title</button>
+                <button>Director</button>
 
             </div>
         )

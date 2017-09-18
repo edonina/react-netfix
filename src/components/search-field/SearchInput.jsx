@@ -13,9 +13,9 @@ export class SearchInput extends React.Component {
 
     render() {
         return (
-            <div>
-                <input type="search" />
-            </div>
+
+                <input type="search" className="search-input" />
+
         )
     }
 }

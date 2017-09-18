@@ -16,7 +16,7 @@ export class SearchResults extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="search-results">
                 <SearchResultsCount />
                 <SearchResultsFilter />
                 <VideoList />

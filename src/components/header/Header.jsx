@@ -13,7 +13,7 @@ export class Header extends React.Component {
 
     render() {
         return (
-           <div></div>
+           <div className="logo">netflixroulette</div>
         )
     }
 }
