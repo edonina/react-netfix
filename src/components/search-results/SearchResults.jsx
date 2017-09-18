@@ -2,7 +2,7 @@ import React from 'react';
 import * as s from './search-results.scss';
 import { SearchResultsCount } from './SearchResultsCount';
 import { SearchResultsFilter } from './SearchResultsFilter';
-import { SearchResultsList } from './SearchResultsList';
+import { VideoList } from '../video-list/VideoList';
 
 export class SearchResults extends React.Component {
 
@@ -19,7 +19,7 @@ export class SearchResults extends React.Component {
             <div>
                 <SearchResultsCount />
                 <SearchResultsFilter />
-                <SearchResultsList />
+                <VideoList />
             </div>
         )
     }

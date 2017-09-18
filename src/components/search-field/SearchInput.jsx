@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export class SearchButton extends React.Component {
+export class SearchInput extends React.Component {
 
     constructor(...args) {
         super(...args);
@@ -14,7 +14,7 @@ export class SearchButton extends React.Component {
     render() {
         return (
             <div>
-
+                <input type="search" />
             </div>
         )
     }

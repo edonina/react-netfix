@@ -1,5 +1,9 @@
 import React from 'react';
 import * as s from './video.scss';
+import { Header } from '../../components/header/Header.jsx';
+import { Footer } from '../../components/footer/Footer.jsx';
+import { VideoFull } from '../../components/video-full/VideoFull.jsx';
+import { VideoList } from '../../components/video-list/VideoList.jsx';
 
 export class Videopage extends React.Component {
 
@@ -14,15 +18,10 @@ export class Videopage extends React.Component {
     render() {
         return (
             <div >
-                11. Film cover
-                12. Film title
-                13. Film rating
-                14. Search button
-                Returns user to the main page with search
-                15. Film duration and release year
-                16. Description
-                17. Director and cast list
-                18. Films by the same director
+                <Header />
+                <VideoFull />
+                <VideoList />
+                <Footer />
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export class SearchInput extends React.Component {
+export class VideoDescription extends React.Component {
 
     constructor(...args) {
         super(...args);
@@ -14,7 +14,7 @@ export class SearchInput extends React.Component {
     render() {
         return (
             <div>
-
+                <p>VideoDescription</p>
             </div>
         )
     }

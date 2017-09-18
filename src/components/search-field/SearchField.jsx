@@ -2,9 +2,9 @@ import React from 'react';
 import * as s from './search.scss';
 import { SearchInput } from './SearchInput';
 import { SearchButton } from './SearchButton';
-import { SearchFiter } from './SearchFiter';
+import { SearchFilter } from './SearchFilter.jsx';
 
-export class SearchFeild extends React.Component {
+export class SearchField extends React.Component {
 
     constructor(...args) {
         super(...args);
@@ -19,7 +19,7 @@ export class SearchFeild extends React.Component {
             <div>
                 <SearchInput />
                 <SearchButton />
-                <SearchFiter />
+                <SearchFilter />
             </div>
         )
     }

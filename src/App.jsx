@@ -1,6 +1,7 @@
 import React from 'react';
-import { Item } from './pages/Mainpage';
-import { Dropdown } from './pages/Videopage';
+import * as s from './style.scss';
+import { Mainpage } from './pages/main/Mainpage';
+import { Videopage } from './pages/video/Videopage';
 
 export default class App extends React.Component {
 

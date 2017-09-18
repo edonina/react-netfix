@@ -1,5 +1,5 @@
 import React from 'react';
-import * as s from './search.scss';
+import * as s from './video-item.scss';
 import { ItemGenre } from './ItemGenre';
 import { ItemImage } from './ItemImage';
 import { ItemReleaseDate } from './ItemReleaseDate';
