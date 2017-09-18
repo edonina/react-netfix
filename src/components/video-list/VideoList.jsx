@@ -16,11 +16,13 @@ export class VideoList extends React.Component {
     render() {
         return (
             <div>
-                <ul>
-                    <li>VideoItem:
-                        <VideoItem />
-                    </li>
-                </ul>
+                <VideoItem />
+                <VideoItem />
+                <VideoItem />
+                <VideoItem />
+                <VideoItem />
+                <VideoItem />
+                <VideoItem />
             </div>
         )
     }
