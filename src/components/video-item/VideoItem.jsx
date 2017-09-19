@@ -18,8 +18,6 @@ export class VideoItem extends React.Component {
                 <ItemReleaseDate />
                 <ItemTitle />
                 <ItemGenre />
-
-
             </div>
         )
     }
