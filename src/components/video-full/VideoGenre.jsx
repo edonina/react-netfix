@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export class VideoDirector extends React.Component {
+export class VideoGenre extends React.Component {
 
     constructor(...args) {
         super(...args);
@@ -9,8 +9,8 @@ export class VideoDirector extends React.Component {
 
     render() {
         return (
-            <p className="video-full-director">
-                Director: Quentin Tarantino
+            <p className="video-full-genre">
+                Oscar-winning Movies
             </p>
         )
     }

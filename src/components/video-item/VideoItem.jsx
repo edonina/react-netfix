@@ -9,19 +9,17 @@ export class VideoItem extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        this.state = {
-            isOpened: false
-        };
     }
 
     render() {
         return (
             <div className="video-item">
+                <ItemImage />
+                <ItemReleaseDate />
                 <ItemTitle />
                 <ItemGenre />
-                <ItemReleaseDate />
-                <ItemImage />
+
+
             </div>
         )
     }

@@ -9,18 +9,16 @@ export class Videopage extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        this.state = {
-            isOpened: false
-        };
     }
 
     render() {
         return (
             <div >
                 <Header />
-                <VideoFull />
-                <VideoList />
+                <div className="page-content">
+                    <VideoFull />
+                    <VideoList />
+                </div>
                 <Footer />
             </div>
         )

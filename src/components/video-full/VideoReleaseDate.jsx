@@ -13,8 +13,8 @@ export class VideoReleaseDate extends React.Component {
 
     render() {
         return (
-            <div>
-                02.05.2017
+            <div className="video-full-date">
+                1994
             </div>
         )
     }

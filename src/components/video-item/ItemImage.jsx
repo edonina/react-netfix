@@ -5,15 +5,11 @@ export class ItemImage extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        this.state = {
-            isOpened: false
-        };
     }
 
     render() {
         return (
-            <div className="filmImg">
+            <div className="video-item-image">
                 <img src="#" />
             </div>
         )

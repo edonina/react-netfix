@@ -8,17 +8,13 @@ export class SearchResults extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        this.state = {
-            isOpened: false
-        };
     }
 
     render() {
         return (
             <div className="search-results">
-                <SearchResultsCount />
                 <SearchResultsFilter />
+                <SearchResultsCount />
                 <VideoList />
             </div>
         )

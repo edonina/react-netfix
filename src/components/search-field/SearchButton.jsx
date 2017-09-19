@@ -5,15 +5,11 @@ export class SearchButton extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        this.state = {
-            isOpened: false
-        };
     }
 
     render() {
         return (
-            <button type="submit">Search</button>
+            <button type="submit" className="search-button">Search</button>
         )
     }
 }

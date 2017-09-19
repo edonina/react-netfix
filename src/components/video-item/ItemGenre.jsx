@@ -5,17 +5,13 @@ export class ItemGenre extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        this.state = {
-            isOpened: false
-        };
     }
 
     render() {
         return (
-            <div>
-
-            </div>
+            <spna className="video-item-genre">
+                Oscar-winning Movies
+            </spna>
         )
     }
 }

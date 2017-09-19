@@ -5,18 +5,14 @@ export class SearchFilter extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        this.state = {
-            isOpened: false
-        };
     }
 
     render() {
         return (
-            <div>
+            <div className="search-filter">
                 <p>Search by:</p>
-                <button>Title</button>
-                <button>Director</button>
+                <button className="filter-btn">Title</button>
+                <button className="filter-btn">Director</button>
 
             </div>
         )

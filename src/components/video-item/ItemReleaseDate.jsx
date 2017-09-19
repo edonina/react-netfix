@@ -5,17 +5,13 @@ export class ItemReleaseDate extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        this.state = {
-            isOpened: false
-        };
     }
 
     render() {
         return (
-            <div>
-
-            </div>
+            <span className="video-item-date">
+                1994
+            </span>
         )
     }
 }

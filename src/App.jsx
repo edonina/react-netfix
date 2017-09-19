@@ -9,6 +9,7 @@ export default class App extends React.Component {
         return (
             <div>
                 <Mainpage />
+                <div className="clearfix"></div>
                 <Videopage />
             </div>
         )

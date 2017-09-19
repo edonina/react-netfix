@@ -8,27 +8,26 @@ import { VideoDuration } from './VideoDuration';
 import { VideoDescription } from './VideoDescription';
 import { VideoDirector } from './VideoDirector';
 import { VideoCast } from './VideoCast';
+import { VideoGenre } from './VideoGenre';
 
 export class VideoFull extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        this.state = {
-            isOpened: false
-        };
     }
 
     render() {
         return (
-            <div>
-                <VideoTitle />
+            <div className="video-full">
                 <VideoCover />
                 <VideoRating />
+                <VideoTitle />
+                <VideoGenre />
                 <VideoReleaseDate />
                 <VideoDuration />
                 <VideoDescription />
                 <VideoDirector />
+                <VideoCast />
             </div>
         )
     }
