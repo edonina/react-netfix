@@ -13,7 +13,7 @@ export class Mainpage extends React.Component {
 
     render() {
         return (
-            <div className={s.oneTwo}>
+            <div>
                 <Header />
                 <div className="page-content">
                     <SearchField />
