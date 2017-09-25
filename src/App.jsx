@@ -1,14 +1,16 @@
 import React from 'react';
-import { Item } from './components/Item';
-import { Dropdown } from './components/Dropdown';
+import * as s from './style.scss';
+import { Mainpage } from './pages/main/Mainpage';
+import { Videopage } from './pages/video/Videopage';
 
 export default class App extends React.Component {
 
     render() {
         return (
             <div>
-                <Item />
-                <Dropdown />
+                <Mainpage />
+                <div className="clearfix"></div>
+                <Videopage />
             </div>
         )
     }

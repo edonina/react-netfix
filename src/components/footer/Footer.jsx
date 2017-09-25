@@ -1,22 +1,20 @@
 import React from 'react';
-import * as s from './dropdown.scss';
+import * as s from './footer.scss';
 
-export class Dropdown extends React.Component {
+export class Footer extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        this.state = {
-            isOpened: false
-        };
     }
 
     render() {
         return (
-            <div className={s.oneTwo}>
+
+            <div className="logo-footer">netflixroulette</div>
+           /* <div className={s.oneTwo}>
                 <div onClick={() => this.setState({ isOpened: !this.state.isOpened })}>Switch</div>
                 {this.state.isOpened && <div>Content</div>}
-            </div>
+            </div>*/
         )
     }
 }

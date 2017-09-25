@@ -13,9 +13,9 @@ module.exports = {
             'webpack-hot-middleware/client',
             './index.jsx',
         ],
-        home: "./Home",
+       /* home: "./Home",
         order: "./Order",
-        profile: "./Profile",
+        profile: "./Profile",*/
         vendor: ["lodash"]
     },
 

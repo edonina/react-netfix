@@ -1,0 +1,34 @@
+.video-item-image{
+  width:150px;
+  height: 225px;
+  background-color: #ccc;
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.video-item{
+  padding: 20px;
+  background-color: white;
+  float: left;
+  margin: 0px 30px 30px 0px;
+  height: 280px;
+}
+
+.video-item-title{
+  text-transform: uppercase;
+  display: block;
+}
+
+.video-item-genre{
+  font-size: 12px;
+
+}
+
+.video-item-date{
+  padding: 2px;
+  display: inline-block;
+  border: 1px solid #111111;
+  font-size: 10px;
+  float: right;
+
+}
