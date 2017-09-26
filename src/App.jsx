@@ -8,9 +8,7 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Mainpage />
-                <div className="clearfix"></div>
-                <Videopage />
+                {this.props.children}
             </div>
         )
     }

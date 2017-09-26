@@ -4,30 +4,35 @@ import ReactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 
+import { Mainpage } from './pages/main/Mainpage';
+import { Videopage } from './pages/video/Videopage';
+import { VideoList } from './components/video-list/VideoList';
+import { EmptyResults } from './components/empty-results/EmptyResults';
+
 const render = () => {
     ReactDom.render((
         <Router>
             <App>
-                /* https://habrahabr.ru/post/329996/
-                <Switch>
-                    <Route exact path="/" component={Welcome} />
 
-                    <Route path="/posts">
+                <Switch>
+                    <Route exact path="/" component={Mainpage} />
+
+                    <Route path="/video">
                         {(args) => (
-                        <Posts {...args}>
+                        <VideoList {...args}>
                             <Switch>
-                                <Route exact path="/posts" component={List} />
-                                <Route path="/posts/article/:name" component={Article} />
+                                <Route exact path="/video" component={VideoList} />
+                                <Route path="/video/:title" component={Videopage} />
                             </Switch>
-                        </Posts>
+                        </VideoList>
                             )}
                     </Route>
 
-                    <Route path="/about/:tab/:section" component={About} />
 
-                    <Route path="*" component={NotFound} />
 
-                </Switch>*/
+                    <Route path="*" component={EmptyResults} />
+
+                </Switch>
             </App>
         </Router>
     ), document.getElementById('app'));

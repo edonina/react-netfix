@@ -21,14 +21,17 @@ export class VideoFull extends React.Component {
             <div className="video-full">
                 <VideoCover />
                 <VideoRating />
-                <VideoTitle />
+                <VideoTitle   />
                 <VideoGenre />
                 <VideoReleaseDate />
                 <VideoDuration />
                 <VideoDescription />
                 <VideoDirector />
                 <VideoCast />
+                /*{this.props.match.params }*/
+                {this.props.match.params.title}
             </div>
+
         )
     }
 }

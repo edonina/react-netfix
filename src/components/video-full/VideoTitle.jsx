@@ -11,6 +11,7 @@ export class VideoTitle extends React.Component {
         return (
             <h1 className="video-full-title">
                 Pulp fiction
+
             </h1>
         )
     }
