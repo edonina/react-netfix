@@ -19,9 +19,10 @@ export class VideoFull extends React.Component {
     render() {
         return (
             <div className="video-full">
+
                 <VideoCover />
                 <VideoRating />
-                <VideoTitle   />
+                <VideoTitle />
                 <VideoGenre />
                 <VideoReleaseDate />
                 <VideoDuration />

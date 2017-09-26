@@ -27,6 +27,7 @@ const render = () => {
                         </Videopage>
                     </Route>
 
+                    <Route exact path="/search" component={Mainpage}/>
 
                     <Route path="*" component={EmptyResults}/>
 
