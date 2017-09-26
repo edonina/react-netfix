@@ -7,6 +7,7 @@ import App from './App';
 import { Mainpage } from './pages/main/Mainpage';
 import { Videopage } from './pages/video/Videopage';
 import { VideoList } from './components/video-list/VideoList';
+import { VideoFull } from './components/video-full/VideoFull';
 import { EmptyResults } from './components/empty-results/EmptyResults';
 
 const render = () => {
@@ -15,22 +16,19 @@ const render = () => {
             <App>
 
                 <Switch>
-                    <Route exact path="/" component={Mainpage} />
+                    <Route exact path="/" component={Mainpage}/>
 
                     <Route path="/video">
-                        {(args) => (
-                        <VideoList {...args}>
+                        <Videopage>
                             <Switch>
-                                <Route exact path="/video" component={VideoList} />
-                                <Route path="/video/:title" component={Videopage} />
+                                <Route exact path="/video" component={VideoList}/>
+                                <Route path="/video/:id" component={VideoFull}/>
                             </Switch>
-                        </VideoList>
-                            )}
+                        </Videopage>
                     </Route>
 
 
-
-                    <Route path="*" component={EmptyResults} />
+                    <Route path="*" component={EmptyResults}/>
 
                 </Switch>
             </App>

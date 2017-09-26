@@ -12,13 +12,11 @@ export class VideoList extends React.Component {
     render() {
         return (
             <div className="video-list">
-                <VideoItem />
-                <VideoItem />
-                <VideoItem />
-                <VideoItem />
-                <VideoItem />
-                <VideoItem />
-                <VideoItem />
+                <VideoItem {...{title: "Kill Bill"}} />
+                <VideoItem {...{title: "Leon"}}  />
+                <VideoItem {...{title: "Kill Bill2"}} />
+                <VideoItem {...{title: "The Beach"}} />
+                <VideoItem {...{title: "Good Father"}} />
             </div>
         )
     }

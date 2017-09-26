@@ -28,8 +28,6 @@ export class VideoFull extends React.Component {
                 <VideoDescription />
                 <VideoDirector />
                 <VideoCast />
-                /*{this.props.match.params }*/
-                {this.props.match.params.title}
             </div>
 
         )

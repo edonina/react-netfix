@@ -8,6 +8,7 @@ export class SearchField extends React.Component {
 
     constructor(...args) {
         super(...args);
+
     }
 
     render() {
@@ -15,7 +16,7 @@ export class SearchField extends React.Component {
             <div>
                 <p className="search-call-to-action">Find your movie</p>
                 <SearchInput />
-                <SearchButton />
+
                 <SearchFilter />
             </div>
         )
