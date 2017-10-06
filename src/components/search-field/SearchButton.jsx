@@ -8,9 +8,10 @@ export const SearchButton = withRouter(({ history}) => (
         onClick={() => {
         console.log(this.refs)
        // let searchQuery = this.refs.searchInput.getDOMNode().value
-        history.push('/video'+ searchQuery) }}
+        history.push('/search'+ searchQuery) }}
     >
         Search
     </button>
+
 ))
 

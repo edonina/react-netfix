@@ -8,15 +8,19 @@ export class SearchField extends React.Component {
 
     constructor(...args) {
         super(...args);
+        this.state= {value:''};
+    }
 
+    handleChange(event){
+        this.setState({value: event.target.value});
     }
 
     render() {
         return (
             <div>
                 <p className="search-call-to-action">Find your movie</p>
-                <SearchInput />
-
+                <SearchInput  onChange={this.handleChange.bind(this)}  />
+                <SearchButton />
                 <SearchFilter />
             </div>
         )
