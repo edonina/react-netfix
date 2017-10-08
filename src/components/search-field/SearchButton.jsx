@@ -2,13 +2,14 @@ import React from 'react';
 import { withRouter } from 'react-router-dom'
 
 
-export const SearchButton = withRouter(({ history}) => (
+export const SearchButton = withRouter(({history, ...props}) => (
     <button
         type="submit" className="search-button"
         onClick={() => {
-        console.log(this.refs)
-       // let searchQuery = this.refs.searchInput.getDOMNode().value
-        history.push('/search'+ searchQuery) }}
+
+        console.log(props);
+       history.push('/search/'+ props.inputValue)
+        }}
     >
         Search
     </button>

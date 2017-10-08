@@ -9,6 +9,7 @@ import { Videopage } from './pages/video/Videopage';
 import { VideoList } from './components/video-list/VideoList';
 import { VideoFull } from './components/video-full/VideoFull';
 import { EmptyResults } from './components/empty-results/EmptyResults';
+import { SearchResults } from './components/search-results/SearchResults';
 
 const render = () => {
     ReactDom.render((
@@ -27,7 +28,16 @@ const render = () => {
                         </Videopage>
                     </Route>
 
-                    <Route exact path="/search" component={Mainpage}/>
+
+
+                    <Route path="/search">
+                        <Mainpage>
+                            <Switch>
+                               
+                                <Route path="/search/:query" component={SearchResults}/>
+                            </Switch>
+                        </Mainpage>
+                    </Route>
 
                     <Route path="*" component={EmptyResults}/>
 

@@ -11,8 +11,11 @@ export class SearchInput extends React.Component {
     render() {
         return (
             <div>
-                <input type="search" value={this.state.value} ref='searchInput' className="search-input"    />
+                <input type="search"
 
+                       className="search-input"
+                       onChange={this.props.handleChange}
+                       value={this.props.inputValue}  />
             </div>
         )
     }
