@@ -11,8 +11,8 @@ export class SearchFilter extends React.Component {
         return (
             <div className="search-filter">
                 <p>Search by:</p>
-                <button className="filter-btn">Title</button>
-                <button className="filter-btn">Director</button>
+                <button className="filter-btn" onClick={this.props.toggleSearchField('title')}>Title</button>
+                <button className="filter-btn" onClick={this.props.toggleSearchField('director')}>Director</button>
             </div>
         )
     }
