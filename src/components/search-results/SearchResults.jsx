@@ -10,27 +10,27 @@ export class SearchResults extends React.Component {
         super(...args);
         console.log(this.props.match.params);
         console.log(this.props.match.params.query);
+        this.toggleSearchBy = this.toggleSearchBy.bind(this);
         this.state= {
             searchQuery: this.props.match.params.query,
             searchField: 'title'
         };
     }
 
-    toggleSearchField(e){
+    toggleSearchBy(e){
         this.setState({
             searchQuery: this.props.match.params.query,
-            searchField: event.target.value
+            sortBy: ''
         });
-        console.log(e);
-
+        console.log(this.state);
     }
 
     render() {
         return (
             <div className="search-results">
-                <SearchResultsFilter toggleSearchField={this.toggleSearchField.bind(this)} />
+                <SearchResultsFilter toggleSearchBy={this.toggleSearchBy} />
                 <SearchResultsCount />
-                <VideoList searchQuery={this.state.searchQuery} searchFeild={this.state.searchField} />
+                <VideoList searchQuery={this.state.searchQuery} sortBy={this.state.sortBy} />
             </div>
         )
     }
