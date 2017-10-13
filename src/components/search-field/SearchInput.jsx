@@ -2,13 +2,13 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 
 
-export const SearchInput = ()=>{
+export const SearchInput = ({handleChange, inputValue})=>{
         return (
             <div>
                 <input type="search"
                        className="search-input"
-                       onChange={this.props.handleChange}
-                       value={this.props.inputValue}  />
+                       onChange={this.handleChange}
+                       value={this.inputValue}  />
             </div>
         )
 

@@ -8,14 +8,16 @@ export class SearchField extends React.Component {
 
     constructor(...args) {
         super(...args);
-        this.state= {value:''};
+        this.state= {value:'ljhljuglgj'};
 
     }
 
     handleChange(event){
+        console.log('=======');
         this.setState({value: event.target.value});
+        console.log(event);
         console.log(event.target.value);
-        console.log(this.refs);
+
     }
 
     render() {
