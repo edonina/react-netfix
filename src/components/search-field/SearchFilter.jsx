@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-export const SearchFilter = ({}) =>{
+export const SearchFilter = ({toggleSearchBy}) =>{
     return (
             <div className="search-filter">
                 <p>Search by:</p>
-                <button className="filter-btn" >Title</button>
-                <button className="filter-btn">Director</button>
+                <button className="filter-btn" onClick={()=>{toggleSearchBy('title')}} >Title</button>
+                <button className="filter-btn" onClick={()=>{toggleSearchBy('director')}}>Director</button>
             </div>
     )
 }

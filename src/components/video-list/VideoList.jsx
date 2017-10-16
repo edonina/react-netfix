@@ -12,6 +12,7 @@ export class VideoList extends React.Component {
     render() {
         return (
             <div className="video-list">
+                <p>--------------</p>
                 <VideoItem {...{title: "Kill Bill"}} />
                 <VideoItem {...{title: "Leon"}}  />
                 <VideoItem {...{title: "Kill Bill2"}} />

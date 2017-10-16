@@ -17,7 +17,9 @@ const render = () => {
             <App>
 
                 <Switch>
+
                     <Route exact path="/" component={Mainpage}/>
+                    <Route path="/search" component={Mainpage} />
 
                     <Route path="/video">
                         <Videopage>
@@ -30,14 +32,9 @@ const render = () => {
 
 
 
-                    <Route path="/search">
-                        <Mainpage>
-                            <Switch>
-                               
-                                <Route path="/search/:query" component={SearchResults}/>
-                            </Switch>
-                        </Mainpage>
-                    </Route>
+
+
+
 
                     <Route path="*" component={EmptyResults}/>
 
