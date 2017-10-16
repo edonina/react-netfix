@@ -46,7 +46,6 @@ export class Mainpage extends React.Component {
     }
 
     toggleSortBy(param) {
-
         this.setState((prevState)=> {
                 return {
                     value: prevState.value,
@@ -55,8 +54,6 @@ export class Mainpage extends React.Component {
                 };
             }
         );
-        console.log('state', this.state)
-
     }
 
     toggleSearchBy(param) {
@@ -68,7 +65,6 @@ export class Mainpage extends React.Component {
                 };
             }
         );
-        console.log('state', this.state)
     }
 
     render() {
