@@ -12,18 +12,18 @@ export class Mainpage extends React.Component {
 
     constructor(...args) {
         super(...args);
-        console.log("00000",this.props.match.params);
+        console.log("00000", this.props.match.params);
 
         this.state = {
             value: this.props.match.params.query || '',
             searchBy: 'title',
             sortBy: 'date'
-
         };
+
         this.handleChange = this.handleChange.bind(this);
         this.toggleSearchBy = this.toggleSearchBy.bind(this);
         this.toggleSortBy = this.toggleSortBy.bind(this);
-        console.log('state',this.state)
+        console.log('state', this.state)
     }
 
 
@@ -39,7 +39,7 @@ export class Mainpage extends React.Component {
                 };
             }
         );
-        console.log('state',this.state)
+        console.log('state', this.state)
         console.log(event);
 
     }
@@ -54,7 +54,7 @@ export class Mainpage extends React.Component {
                 };
             }
         );
-        console.log('state',this.state)
+        console.log('state', this.state)
 
     }
 
@@ -67,27 +67,23 @@ export class Mainpage extends React.Component {
                 };
             }
         );
-        console.log('state',this.state)
+        console.log('state', this.state)
     }
 
-
     render() {
-
-
         return (
             <div>
                 <Header />
-
                 <div className="page-content">
                     <SearchField handleChange={this.handleChange}
                                  toggleSearchBy={this.toggleSearchBy}
                                  inputValue={this.state.value}/>
                     <Switch>
                         <Route path="/search/:query" render={() => (
-  <SearchResults toggleSortBy={this.toggleSortBy} {...this.props} />
-)}/>
-
+                            <SearchResults toggleSortBy={this.toggleSortBy} {...this.props} />
+                        )}/>
                     </Switch>
+
                     {this.props.children}
 
                     <VideoList />

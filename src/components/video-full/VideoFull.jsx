@@ -19,7 +19,6 @@ export class VideoFull extends React.Component {
     render() {
         return (
             <div className="video-full">
-
                 <VideoCover />
                 <VideoRating />
                 <VideoTitle />
@@ -30,7 +29,6 @@ export class VideoFull extends React.Component {
                 <VideoDirector />
                 <VideoCast />
             </div>
-
         )
     }
 }

@@ -11,7 +11,6 @@ export class Videopage extends React.Component {
     constructor(...args) {
         super(...args);
        // console.log("00000",this.props.match.params);
-
     }
 
     render() {

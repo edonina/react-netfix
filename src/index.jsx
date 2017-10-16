@@ -30,12 +30,6 @@ const render = () => {
                         </Videopage>
                     </Route>
 
-
-
-
-
-
-
                     <Route path="*" component={EmptyResults}/>
 
                 </Switch>
