@@ -23,6 +23,7 @@ export class Mainpage extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.toggleSearchBy = this.toggleSearchBy.bind(this);
         this.toggleSortBy = this.toggleSortBy.bind(this);
+
         console.log('state', this.state)
     }
 
