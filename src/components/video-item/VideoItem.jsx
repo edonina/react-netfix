@@ -11,8 +11,9 @@ export class VideoItem extends React.Component {
         super(...args);
 
         this.title = "Attack on titan";
-        this.id = 47;
-        this.link = '/video/' + this.props.title;
+        this.id = 10;
+        //this.link = '/video/' + this.props.title;
+        this.link = '/video/' + this.id;
     }
 
     render() {

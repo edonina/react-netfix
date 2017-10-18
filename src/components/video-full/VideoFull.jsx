@@ -10,13 +10,14 @@ import { VideoDirector } from './VideoDirector';
 import { VideoCast } from './VideoCast';
 import { VideoGenre } from './VideoGenre';
 
-export class VideoFull extends React.Component {
+import PlayerAPI from '../../api.js'
 
-    constructor(...args) {
-        super(...args);
-    }
+export const VideoFull = (props) =>  {
 
-    render() {
+    const player = PlayerAPI.get(
+        parseInt(props.match.params.number, 10)
+    )
+
         return (
             <div className="video-full">
 
@@ -32,5 +33,5 @@ export class VideoFull extends React.Component {
             </div>
 
         )
-    }
+
 }

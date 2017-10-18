@@ -19,7 +19,7 @@ const render = () => {
                 <Switch>
 
                     <Route exact path="/" component={Mainpage}/>
-                    <Route path="/search" component={Mainpage} />
+                    <Route  path="/search" component={Mainpage} />
 
                     <Route path="/video">
                         <Videopage>

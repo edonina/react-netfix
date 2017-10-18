@@ -9,9 +9,9 @@ export class ItemGenre extends React.Component {
 
     render() {
         return (
-            <spna className="video-item-genre">
+            <span className="video-item-genre">
                 Oscar-winning Movies
-            </spna>
+            </span>
         )
     }
 }

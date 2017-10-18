@@ -6,6 +6,8 @@ import { SearchField } from '../../components/search-field/SearchField.jsx';
 import { SearchResults } from '../../components/search-results/SearchResults.jsx';
 import { VideoList } from '../../components/video-list/VideoList';
 
+
+
 import { Route, Switch } from 'react-router-dom';
 
 export class Mainpage extends React.Component {
@@ -31,14 +33,16 @@ export class Mainpage extends React.Component {
         console.log('=======', event.target.value);
 
 
-        this.setState((prevState)=> {
+       this.setState({ value: event.target.value }
+
+        ); /*this.setState((prevState)=> {
                 return {
                     value: event.target.value,
                     searchBy: prevState.searchBy,
                     sortBy: prevState.sortBy
                 };
             }
-        );
+        );*/
         console.log('state',this.state)
         console.log(event);
 
@@ -46,7 +50,7 @@ export class Mainpage extends React.Component {
 
     toggleSortBy(param) {
 
-        this.setState((prevState)=> {
+       /* this.setState((prevState)=> {
                 return {
                     value: prevState.value,
                     searchBy: prevState.searchBy,
@@ -54,12 +58,12 @@ export class Mainpage extends React.Component {
                 };
             }
         );
-        console.log('state',this.state)
+        console.log('state',this.state)*/
 
     }
 
     toggleSearchBy(param) {
-        this.setState((prevState)=> {
+      /*  this.setState((prevState)=> {
                 return {
                     value: prevState.value,
                     searchBy: param,
@@ -67,7 +71,7 @@ export class Mainpage extends React.Component {
                 };
             }
         );
-        console.log('state',this.state)
+        console.log('state',this.state)*/
     }
 
 
@@ -83,7 +87,9 @@ export class Mainpage extends React.Component {
                                  toggleSearchBy={this.toggleSearchBy}
                                  inputValue={this.state.value}/>
                     <Switch>
+                        <Route exact path='/search' component={VideoList}/>
                         <Route path="/search/:query" render={() => (
+
   <SearchResults toggleSortBy={this.toggleSortBy} {...this.props} />
 )}/>
 
