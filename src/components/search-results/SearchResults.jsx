@@ -4,12 +4,12 @@ import { SearchResultsCount } from './SearchResultsCount';
 import { SearchResultsSort } from './SearchResultsSort';
 import { VideoList } from '../video-list/VideoList';
 
-export const SearchResults = ({toggleSortBy})=> {
 
-        return (
-            <div className="search-results">
-                <SearchResultsSort toggleSortBy={toggleSortBy} />
-                <SearchResultsCount />
-            </div>
-        )
-    }
+export const SearchResults = ({toggleSortBy})=> {
+    return (
+        <div className="search-results">
+            <SearchResultsSort toggleSortBy={toggleSortBy}/>
+            <SearchResultsCount />
+        </div>
+    )
+}

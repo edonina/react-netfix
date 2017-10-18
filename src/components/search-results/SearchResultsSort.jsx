@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export const SearchResultsSort = ({toggleSortBy}) => {
     return (
         <div className="search-results-filter">
@@ -9,4 +10,3 @@ export const SearchResultsSort = ({toggleSortBy}) => {
         </div>
     )
 };
-

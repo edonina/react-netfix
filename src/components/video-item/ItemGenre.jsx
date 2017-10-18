@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+<<<<<<< HEAD
 export class ItemGenre extends React.Component {
 
     constructor(...args) {
@@ -14,4 +15,12 @@ export class ItemGenre extends React.Component {
             </span>
         )
     }
+=======
+export const ItemGenre = () => {
+    return (
+        <spna className="video-item-genre">
+            Oscar-winning Movies
+        </spna>
+    )
+>>>>>>> c49aad84e6004770be1473129f023f4cbaf46625
 }

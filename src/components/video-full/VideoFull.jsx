@@ -20,7 +20,6 @@ export const VideoFull = (props) =>  {
 
         return (
             <div className="video-full">
-
                 <VideoCover />
                 <VideoRating />
                 <VideoTitle />
@@ -31,7 +30,6 @@ export const VideoFull = (props) =>  {
                 <VideoDirector />
                 <VideoCast />
             </div>
-
         )
 
 }
