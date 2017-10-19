@@ -14,7 +14,7 @@ export class Mainpage extends React.Component {
 
     constructor(...args) {
         super(...args);
-        console.log("00000", this.props.match.params);
+        console.log("params: ", this.props.match.params);
 
         this.state = {
             value: this.props.match.params.query || '',
@@ -33,34 +33,24 @@ export class Mainpage extends React.Component {
     handleChange(event) {
         console.log('=======', event.target.value);
 
-
        this.setState({ value: event.target.value }
-
-        ); /*this.setState((prevState)=> {
+        );
+        /*this.setState((prevState)=> {
                 return {
                     value: event.target.value,
                     searchBy: prevState.searchBy,
                     sortBy: prevState.sortBy
                 };
             }
-<<<<<<< HEAD
+
         );*/
         console.log('state',this.state)
-=======
-        );
-        console.log('state', this.state)
->>>>>>> c49aad84e6004770be1473129f023f4cbaf46625
         console.log(event);
 
     }
 
     toggleSortBy(param) {
-<<<<<<< HEAD
-
        /* this.setState((prevState)=> {
-=======
-        this.setState((prevState)=> {
->>>>>>> c49aad84e6004770be1473129f023f4cbaf46625
                 return {
                     value: prevState.value,
                     searchBy: prevState.searchBy,
@@ -68,11 +58,7 @@ export class Mainpage extends React.Component {
                 };
             }
         );
-<<<<<<< HEAD
         console.log('state',this.state)*/
-
-=======
->>>>>>> c49aad84e6004770be1473129f023f4cbaf46625
     }
 
     toggleSearchBy(param) {
@@ -84,10 +70,7 @@ export class Mainpage extends React.Component {
                 };
             }
         );
-<<<<<<< HEAD
         console.log('state',this.state)*/
-=======
->>>>>>> c49aad84e6004770be1473129f023f4cbaf46625
     }
 
     render() {
@@ -101,19 +84,12 @@ export class Mainpage extends React.Component {
                     <Switch>
                         <Route exact path='/search' component={VideoList}/>
                         <Route path="/search/:query" render={() => (
-<<<<<<< HEAD
-
-  <SearchResults toggleSortBy={this.toggleSortBy} {...this.props} />
-)}/>
-
-=======
                             <SearchResults toggleSortBy={this.toggleSortBy} {...this.props} />
                         )}/>
->>>>>>> c49aad84e6004770be1473129f023f4cbaf46625
+
                     </Switch>
 
                     {this.props.children}
-
                     <VideoList />
                 </div>
                 <Footer />
