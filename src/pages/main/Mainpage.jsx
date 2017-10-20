@@ -25,52 +25,43 @@ export class Mainpage extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.toggleSearchBy = this.toggleSearchBy.bind(this);
         this.toggleSortBy = this.toggleSortBy.bind(this);
-
-        console.log('state', this.state)
+        this.consoleState = this.consoleState.bind(this);
     }
 
 
     handleChange(event) {
-        console.log('=======', event.target.value);
+        const newState = Object.assign({}, {
+            value : event.target.value,
+            searchBy: this.state.searchBy,
+            sortBy: this.state.sortBy
 
-       this.setState({ value: event.target.value }
-        );
-        /*this.setState((prevState)=> {
-                return {
-                    value: event.target.value,
-                    searchBy: prevState.searchBy,
-                    sortBy: prevState.sortBy
-                };
-            }
+        });
 
-        );*/
-        console.log('state',this.state)
-        console.log(event);
-
+        this.setState(newState, this.consoleState);
     }
 
     toggleSortBy(param) {
-       /* this.setState((prevState)=> {
-                return {
-                    value: prevState.value,
-                    searchBy: prevState.searchBy,
-                    sortBy: param
-                };
-            }
-        );
-        console.log('state',this.state)*/
+        const newState = Object.assign({}, {
+            value: this.state.value,
+            searchBy: this.state.searchBy,
+            sortBy: param
+        });
+
+        this.setState(newState, this.consoleState);
+    }
+
+    consoleState(){
+        console.log('state',this.state);
     }
 
     toggleSearchBy(param) {
-      /*  this.setState((prevState)=> {
-                return {
-                    value: prevState.value,
-                    searchBy: param,
-                    sortBy: prevState.sortBy
-                };
-            }
-        );
-        console.log('state',this.state)*/
+        const newState = Object.assign({}, {
+            value: this.state.value,
+            searchBy: param,
+            sortBy: this.state.sortBy
+        });
+
+        this.setState(newState, this.consoleState);
     }
 
     render() {
