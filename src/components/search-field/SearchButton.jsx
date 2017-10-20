@@ -6,13 +6,11 @@ export const SearchButton = withRouter(({history, ...props}) => (
     <button
         type="submit" className="search-button"
         onClick={() => {
-
-        console.log(props);
-       history.push('/search/'+ props.inputValue)
+            history.push('/search/'+ props.inputValue);
+            console.log(props);
         }}
     >
         Search
     </button>
 
 ))
-
