@@ -1,15 +1,16 @@
 import React from 'react';
-import { AppContainer } from 'react-hot-loader';
+/*import { AppContainer } from 'react-hot-loader';*/
 import ReactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 
 import { Mainpage } from './pages/main/Mainpage';
 import { Videopage } from './pages/video/Videopage';
+import { FullVideoPage } from './pages/FullVideoPage';
 import { VideoList } from './components/video-list/VideoList';
-import { VideoFull } from './components/video-full/VideoFull';
+
 import { EmptyResults } from './components/empty-results/EmptyResults';
-import { SearchResults } from './components/search-results/SearchResults';
+
 
 const render = () => {
     ReactDom.render((
@@ -25,9 +26,10 @@ const render = () => {
                         <Videopage>
                             <Switch>
                                 <Route exact path="/video" component={VideoList}/>
-                                <Route path="/video/:id" component={VideoFull}/>
+                                <Route path="/video/:title" component={FullVideoPage}/>
                             </Switch>
                         </Videopage>
+
                     </Route>
 
                     <Route path="*" component={EmptyResults}/>
@@ -39,7 +41,9 @@ const render = () => {
 }
 
 render();
+/*
 
 if (module.hot) {
     module.hot.accept('./App', render);
 }
+*/

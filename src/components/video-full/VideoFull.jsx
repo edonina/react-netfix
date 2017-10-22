@@ -13,9 +13,10 @@ import { VideoGenre } from './VideoGenre';
 import PlayerAPI from '../../api.js'
 
 export const VideoFull = (props) =>  {
+    console.log('9999', props)
 
     const player = PlayerAPI.get(
-        parseInt(props.match.params.number, 10)
+      //  parseInt(props.match.params.number, 10)
     )
 
         return (

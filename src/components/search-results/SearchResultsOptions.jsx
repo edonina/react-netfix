@@ -5,10 +5,10 @@ import { SearchResultsSort } from './SearchResultsSort';
 import { VideoList } from '../video-list/VideoList';
 
 
-export const SearchResults = ({toggleSortBy})=> {
-    return (
+export const SearchResultsOptions = ({toggleSortBy, props})=> {
+   return (
         <div className="search-results">
-            <SearchResultsSort toggleSortBy={toggleSortBy}/>
+            <SearchResultsSort toggleSortBy={toggleSortBy} props={props} />
             <SearchResultsCount />
         </div>
     )

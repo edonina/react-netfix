@@ -8,18 +8,14 @@ import { Route, Switch } from 'react-router-dom';
 
 export class Videopage extends React.Component {
 
-    constructor(...args) {
-        super(...args);
-       // console.log("00000",this.props.match.params);
-    }
 
     render() {
+
         return (
             <div >
                 <Header />
                 <div className="page-content">
-                    {this.props.children}
-                    <VideoList />
+                     {this.props.children}
                 </div>
                 <Footer />
             </div>

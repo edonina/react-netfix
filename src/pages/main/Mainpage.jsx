@@ -3,7 +3,8 @@ import * as s from './main.scss';
 import { Header } from '../../components/header/Header.jsx';
 import { Footer } from '../../components/footer/Footer.jsx';
 import { SearchField } from '../../components/search-field/SearchField.jsx';
-import { SearchResults } from '../../components/search-results/SearchResults.jsx';
+import { SearchResults } from '../SearchResults.jsx';
+import { SearchPage } from '../SearchPage.jsx';
 import { VideoList } from '../../components/video-list/VideoList';
 
 
@@ -14,7 +15,6 @@ export class Mainpage extends React.Component {
 
     constructor(...args) {
         super(...args);
-        console.log("params: ", this.props.match.params);
 
         this.state = {
             value: this.props.match.params.query || '',
@@ -69,19 +69,28 @@ export class Mainpage extends React.Component {
             <div>
                 <Header />
                 <div className="page-content">
-                    <SearchField handleChange={this.handleChange}
-                                 toggleSearchBy={this.toggleSearchBy}
-                                 inputValue={this.state.value}/>
                     <Switch>
-                        <Route exact path='/search' component={VideoList}/>
+                        <Route exact path='/search'  render={() => (
+                            <SearchPage
+                                toggleSearchBy={this.toggleSearchBy}
+                                handleChange={this.handleChange}
+                                state={this.state}
+                                props={this.props}  />
+                        )}/>
+
                         <Route path="/search/:query" render={() => (
-                            <SearchResults toggleSortBy={this.toggleSortBy} {...this.props} />
+                            <SearchResults
+                                handleChange={this.handleChange}
+                                toggleSearchBy={this.toggleSearchBy}
+                                toggleSortBy={this.toggleSortBy}
+                                state={this.state}
+                                props={this.props}  />
                         )}/>
 
                     </Switch>
 
                     {this.props.children}
-                    <VideoList />
+
                 </div>
                 <Footer />
             </div>

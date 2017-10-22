@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export const SearchResultsSort = ({toggleSortBy}) => {
+export const SearchResultsSort = ({toggleSortBy, props}) => {
     return (
         <div className="search-results-filter">
             <span>sort by:</span>

@@ -3,13 +3,8 @@ import * as s from './video-list.scss';
 import { VideoItem } from '../video-item/VideoItem.jsx';
 
 
-export class VideoList extends React.Component {
+export const VideoList =(props )=>{
 
-    constructor(...args) {
-        super(...args);
-    }
-
-    render() {
         return (
             <div className="video-list">
                 <p>--------------</p>
@@ -20,5 +15,5 @@ export class VideoList extends React.Component {
                 <VideoItem {...{title: "Good Father"}} />
             </div>
         )
-    }
+
 }
