@@ -8,7 +8,6 @@ export const SearchInput = ({handleChange})=> {
             <input type="search"
                    className="search-input"
                    onChange={handleChange}
-
             />
         </div>
     )

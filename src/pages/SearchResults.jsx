@@ -5,7 +5,7 @@ import { SearchField } from '../components/search-field/SearchField.jsx';
 import { SearchResultsOptions } from '../components/search-results/SearchResultsOptions.jsx';
 
 export const SearchResults = ({handleChange, toggleSearchBy, toggleSortBy, state, props}) => {
-        console.log("SearchResults",props);
+        console.log("SearchResults", props.match.params);
         return (
             <div>
                 <SearchField handleChange={handleChange}
