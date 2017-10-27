@@ -38,6 +38,11 @@ export class Mainpage extends React.Component {
         });
 
         this.setState(newState, this.consoleState);
+
+        store.dispatch({
+            value: event.target.value,
+            type: UPDATE_SEARCH_QUERY
+        });
     }
 
     toggleSortBy(param) {
@@ -48,6 +53,11 @@ export class Mainpage extends React.Component {
         });
 
         this.setState(newState, this.consoleState);
+
+        store.dispatch({
+            sortBy: param,
+            type: UPDATE_SORT_BY
+        });
     }
 
     consoleState(){
@@ -62,6 +72,11 @@ export class Mainpage extends React.Component {
         });
 
         this.setState(newState, this.consoleState);
+
+        store.dispatch({
+            searchBy: param,
+            type: UPDATE_SORT_BY
+        });
     }
 
     render() {
