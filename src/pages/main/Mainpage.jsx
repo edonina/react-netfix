@@ -85,6 +85,15 @@ export class Mainpage extends React.Component {
                 <Header />
                 <div className="page-content">
                     <Switch>
+
+                        <Route exact path='/'  render={() => (
+                            <SearchPage
+                                toggleSearchBy={this.toggleSearchBy}
+                                handleChange={this.handleChange}
+                                state={this.state}
+                                props={this.props}  />
+                        )}/>
+
                         <Route exact path='/search'  render={() => (
                             <SearchPage
                                 toggleSearchBy={this.toggleSearchBy}
