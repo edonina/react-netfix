@@ -1,7 +1,8 @@
 import { createStore } from 'redux';
+import { combineReducers } from 'redux';
 
 
-const searchReducer = ( stete = 0, action ) => {
+const searchReducer = ( state = 0, action ) => {
     switch (action.type) {
         case SORT_BY_DATE :
             return state + 1;
@@ -21,7 +22,13 @@ const searchReducer = ( stete = 0, action ) => {
         default :
             return state;
     }
-}
+};
+
+const videoApp = combineReducers({
+    searchReducer : searchReducer
+
+
+});
 
 const store = createStore( searchReducer );
 

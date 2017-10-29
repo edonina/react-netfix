@@ -13,17 +13,15 @@ import { VideoGenre } from './VideoGenre';
 import PlayerAPI from '../../api.js'
 
 export const VideoFull = (props) =>  {
-    console.log('9999', props)
+    console.log('9999', props.video.original_title)
 
-    const player = PlayerAPI.get(
-      //  parseInt(props.match.params.number, 10)
-    )
+
 
         return (
             <div className="video-full">
                 <VideoCover />
                 <VideoRating />
-                <VideoTitle />
+                <VideoTitle  title = {props.video.original_title} />
                 <VideoGenre />
                 <VideoReleaseDate />
                 <VideoDuration />

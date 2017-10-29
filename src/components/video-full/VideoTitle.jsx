@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-export const VideoTitle = ()=> {
+export const VideoTitle = ({title})=> {
     return (
         <h1 className="video-full-title">
-            Pulp fiction
+            {title}
         </h1>
     )
 }

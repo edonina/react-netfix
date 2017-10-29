@@ -10,9 +10,10 @@ export class VideoItem extends React.Component {
     constructor(...args) {
         super(...args);
 
-        this.title = "Attack on titan";
-
-        this.link = '/video/' + this.props.title;
+        //this.title = "Attack on titan";
+        console.log(this.props);
+        this.link = '/video/';
+       // this.link = '/video/' + this.props.video.title;
 
     }
 
@@ -21,7 +22,8 @@ export class VideoItem extends React.Component {
             <div className="video-item">
                 <ItemImage />
                 <ItemReleaseDate />
-                <ItemTitle link={this.link} title={this.props.title} />
+                <ItemTitle link={this.link}
+                    />
                 <ItemGenre />
 
             </div>
