@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-export const ItemReleaseDate = () => {
+export const ItemReleaseDate = ({releaseDate}) => {
     return (
         <span className="video-item-date">
-                1994
-            </span>
+            {releaseDate}
+        </span>
     )
 }

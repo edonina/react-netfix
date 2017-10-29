@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const ItemGenre = () => {
+export const ItemGenre = ({genreIds}) => {
     return (
         <span className="video-item-genre">
-            Oscar-winning Movieshvhvhv.
+            {genreIds}
         </span>
     )
 }

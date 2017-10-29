@@ -9,22 +9,17 @@ export class VideoItem extends React.Component {
 
     constructor(...args) {
         super(...args);
-
-        //this.title = "Attack on titan";
-        console.log(this.props);
-        this.link = '/video/';
-       // this.link = '/video/' + this.props.video.title;
-
+        this.link = '/video/' + this.props.video.title;
     }
 
     render() {
+        const { title, release_date, poster_path, genre_ids } = this.props.video;
         return (
             <div className="video-item">
-                <ItemImage />
-                <ItemReleaseDate />
-                <ItemTitle link={this.link}
-                    />
-                <ItemGenre />
+                <ItemImage src={poster_path}/>
+                <ItemReleaseDate releaseDate={release_date}/>
+                <ItemTitle link={this.link} title={title} />
+                <ItemGenre genreIds={genre_ids}/>
 
             </div>
         )

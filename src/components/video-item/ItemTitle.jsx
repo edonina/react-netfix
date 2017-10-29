@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-export const ItemTitle = (props) => {
+export const ItemTitle = ({title, link}) => {
     return (
         <span className="video-item-title">
-                <Link to={props.link}>{props.title}</Link>
+                <Link to={link}>{title}</Link>
             </span>
     )
 }
