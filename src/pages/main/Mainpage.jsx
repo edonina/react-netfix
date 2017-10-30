@@ -6,6 +6,7 @@ import { SearchField } from '../../components/search-field/SearchField.jsx';
 import { SearchResults } from '../SearchResults.jsx';
 import { SearchPage } from '../SearchPage.jsx';
 import { VideoList } from '../../components/video-list/VideoList';
+import { store } from '../../reducers/store';
 
 
 
@@ -41,22 +42,15 @@ export class Mainpage extends React.Component {
 
         store.dispatch({
             value: event.target.value,
-            type: UPDATE_SEARCH_QUERY
+            type: 'UPDATE_SEARCH_QUERY'
         });
     }
 
     toggleSortBy(param) {
-        const newState = Object.assign({}, {
-            value: this.state.value,
-            searchBy: this.state.searchBy,
-            sortBy: param
-        });
-
-        this.setState(newState, this.consoleState);
-
         store.dispatch({
+            state: this.state,
             sortBy: param,
-            type: UPDATE_SORT_BY
+            type: 'UPDATE_SORT_BY'
         });
     }
 
@@ -65,17 +59,12 @@ export class Mainpage extends React.Component {
     }
 
     toggleSearchBy(param) {
-        const newState = Object.assign({}, {
-            value: this.state.value,
-            searchBy: param,
-            sortBy: this.state.sortBy
-        });
 
-        this.setState(newState, this.consoleState);
 
         store.dispatch({
+            state: this.state,
             searchBy: param,
-            type: UPDATE_SORT_BY
+            type: 'UPDATE_SORT_BY'
         });
     }
 
