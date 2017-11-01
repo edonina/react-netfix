@@ -16,7 +16,7 @@ export const SearchFilter = () => {
         <div className="search-filter">
             <p>Search by:</p>
             <button className="filter-btn" onClick={()=>{toggleSearchBy('title')}}>Title</button>
-            <button className="filter-btn" onClick={()=>{toggleSearchBy('director')}}>Director</button>
+            <button className="filter-btn" onClick={()=>{toggleSearchBy('year')}}>Director</button>
         </div>
     )
 }

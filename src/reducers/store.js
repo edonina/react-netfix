@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 
 
-const searchReducer = (state = {value: '', searchBy: 'title', sortBy: 'date', videoList: []}, action) => {
+const searchReducer = (state = {value: '', searchBy: 'title', sortBy: 'release_date', videoList: []}, action) => {
     switch (action.type) {
         case 'SORT_BY_DATE' :
             return state + 1;
