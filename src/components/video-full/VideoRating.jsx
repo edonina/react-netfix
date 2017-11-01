@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-export const VideoRating = () => {
+export const VideoRating = ({popularity}) => {
     return (
         <div className="video-full-rating">
-            8.27
+            {popularity}
         </div>
     )
 }

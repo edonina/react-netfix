@@ -1,9 +1,11 @@
 import React from 'react';
 
 export const ItemImage = ({src}) => {
+    const fullPath= 'https://image.tmdb.org/t/p/w300'+ src;
+
     return (
         <div className="video-item-image">
-            <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{src}" />
+            <img width="100%" src={fullPath} />
         </div>
     )
 }

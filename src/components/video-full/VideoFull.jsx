@@ -7,27 +7,25 @@ import { VideoReleaseDate } from './VideoReleaseDate';
 import { VideoDuration } from './VideoDuration';
 import { VideoDescription } from './VideoDescription';
 import { VideoDirector } from './VideoDirector';
-import { VideoCast } from './VideoCast';
 import { VideoGenre } from './VideoGenre';
 
 import PlayerAPI from '../../api.js'
 
 export const VideoFull = (props) =>  {
     console.log('9999', props.video.original_title)
-
+   let {original_title, runtime, release_date, genres, overview, poster_path, popularity } = props.video;
 
 
         return (
             <div className="video-full">
-                <VideoCover />
-                <VideoRating />
-                <VideoTitle  title = {props.video.original_title} />
-                <VideoGenre />
-                <VideoReleaseDate />
-                <VideoDuration />
-                <VideoDescription />
+                <VideoCover  path={poster_path} />
+                <VideoRating popularity={popularity} />
+                <VideoTitle  title = {original_title} />
+                <VideoGenre genres ={genres} />
+                <VideoReleaseDate releaseDate={release_date} />
+                <VideoDuration duration ={runtime}  />
+                <VideoDescription  overview ={overview} />
                 <VideoDirector />
-                <VideoCast />
             </div>
         )
 

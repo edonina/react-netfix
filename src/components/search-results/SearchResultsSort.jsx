@@ -1,7 +1,17 @@
 import React from 'react';
+import { store } from '../../reducers/store';
 
 
-export const SearchResultsSort = ({toggleSortBy, props}) => {
+export const SearchResultsSort = () => {
+    const toggleSortBy = (param) => {
+        store.dispatch({
+            state: store.getState(),
+            sortBy: param,
+            type: 'UPDATE_SORT_BY'
+        });
+        console.log(store.getState());
+    }
+
     return (
         <div className="search-results-filter">
             <span>sort by:</span>

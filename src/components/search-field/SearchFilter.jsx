@@ -1,7 +1,17 @@
 import React from 'react';
+import { store } from '../../reducers/store';
 
 
-export const SearchFilter = ({toggleSearchBy}) => {
+export const SearchFilter = () => {
+    const toggleSearchBy = (param) => {
+        store.dispatch({
+            state: store.getState(),
+            searchBy: param,
+            type: 'UPDATE_SEARCH_BY'
+        });
+        console.log(store.getState());
+    }
+
     return (
         <div className="search-filter">
             <p>Search by:</p>

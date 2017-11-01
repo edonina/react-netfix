@@ -4,8 +4,9 @@ import ReactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 
-import { Mainpage } from './pages/main/Mainpage';
-import { Videopage } from './pages/video/Videopage';
+import { SearchResults } from './pages/SearchResults.jsx';
+import { SearchPage } from './pages/SearchPage.jsx';
+
 import { FullVideoPage } from './pages/FullVideoPage';
 import { VideoList } from './components/video-list/VideoList';
 
@@ -19,18 +20,27 @@ const render = () => {
 
                 <Switch>
 
-                    <Route exact path="/" component={Mainpage}/>
-                    <Route  path="/search" component={Mainpage} />
 
-                    <Route path="/video">
-                        <Videopage>
-                            <Switch>
-                                <Route exact path="/video" component={VideoList}/>
-                                <Route path="/video/:title" component={FullVideoPage}/>
-                            </Switch>
-                        </Videopage>
+                    <Route exact path='/' render={(props) => (
+                        <SearchPage props={props}  />
+                    )}/>
 
-                    </Route>
+                    <Route exact path='/search' render={(props) => (
+                        <SearchPage props={props} />
+                    )}/>
+
+                    <Route path="/search/:query" render={(props) => (
+                        <SearchResults props={props}  />
+                    )}/>
+
+                    <Route exact path='/video' render={(props) => (
+                        <VideoList props={props} />
+                    )}/>
+
+                    <Route path="/video/:id" component={FullVideoPage} />
+
+
+
 
                     <Route path="*" component={EmptyResults}/>
 
@@ -43,7 +53,7 @@ const render = () => {
 render();
 /*
 
-if (module.hot) {
-    module.hot.accept('./App', render);
-}
-*/
+ if (module.hot) {
+ module.hot.accept('./App', render);
+ }
+ */

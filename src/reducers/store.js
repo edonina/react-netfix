@@ -1,65 +1,63 @@
 import { createStore, combineReducers } from 'redux';
 
 
-const searchReducer = ( state = {}, action ) => {
+const searchReducer = (state = {value: '', searchBy: 'title', sortBy: 'date', videoList: []}, action) => {
     switch (action.type) {
         case 'SORT_BY_DATE' :
             return state + 1;
         case 'SORT_BY_RATING' :
             return state - 1;
-        case 'UPDATE_SORT_BY':
-            return () => {
-                this.setState(Object.assign({}, {
-                    value: state.value,
-                    searchBy: state.searchBy,
-                    sortBy: param
-                }));
-            }
         case 'SEARCH_BY_TITLE':
             return state - 1;
+        case 'UPDATE_VIDEO_LIST':
+            return Object.assign({}, {
+                value: state.value,
+                searchBy: state.searchBy,
+                sortBy: state.sortBy,
+                videoList: action.videoList
+            });
 
-        case 'SEARCH_BY_DIRECTOR':
-            return state - 1;
+
+        case 'UPDATE_SORT_BY':
+            return Object.assign({}, {
+                value: state.value,
+                searchBy: state.searchBy,
+                sortBy: action.sortBy,
+                videoList: state.videoList
+            });
 
         case 'UPDATE_SEARCH_BY':
-            return () => {
-                this.setState(Object.assign({}, {
-                    value: state.value,
-                    searchBy: param,
-                    sortBy: state.sortBy
-                }));
-            }
+            return Object.assign({}, {
+                value: state.value,
+                searchBy: action.searchBy,
+                sortBy: state.sortBy,
+                videoList: state.videoList
+            });
         case 'UPDATE_SEARCH_QUERY':
-            return state - 1;
+            return Object.assign({}, {
+                value: action.value,
+                searchBy: state.searchBy,
+                sortBy: state.sortBy,
+                videoList: state.videoList
+            });
 
         default :
             return state;
     }
 };
 
-
-
 const videoApp = combineReducers({
-    searchReducer : searchReducer
+    searchReducer: searchReducer
 });
 
-export const store = createStore( searchReducer );
-
-
-//store.dispatch({ type: INCREMENT});
-//console.log( store.getState());
+export const store = createStore(searchReducer);
 
 
 /*const render = () => {
-    document.body.innerText = store.getState();
-}*/
+ document.body.innerText = store.getState();
+ }*/
 /*
-store.subscribe(  render());
-render();
-
-document.addEventListener( 'click', (store) => {
-    store.dispatch({ type: INCREMENT});
-})
-
-export  store;*/
+ store.subscribe(  render());
+ render();
+*/
 

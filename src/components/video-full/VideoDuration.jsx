@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-export const VideoDuration = () => {
+export const VideoDuration = ({duration}) => {
     return (
         <div className="video-full-duration">
-            207 min
+            {duration} min
         </div>
     )
 }
