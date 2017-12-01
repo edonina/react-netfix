@@ -1,7 +1,6 @@
 import React from 'react';
 import { store } from '../../reducers/store';
 
-
 export const SearchResultsSort = () => {
     const toggleSortBy = (param) => {
         store.dispatch({
