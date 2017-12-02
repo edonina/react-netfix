@@ -1,45 +1,26 @@
 import { createStore, combineReducers } from 'redux';
+import { reducer as form } from 'redux-form'
 
+const initialState = {
+    value: '',
+    searchBy: 'title',
+    sortBy: 'release_date',
+    videoList: []
+};
 
-const searchReducer = (state = {value: '', searchBy: 'title', sortBy: 'release_date', videoList: []}, action) => {
+const searchReducer = (state : initialState, action) => {
     switch (action.type) {
-        case 'SORT_BY_DATE' :
-            return state + 1;
-        case 'SORT_BY_RATING' :
-            return state - 1;
-        case 'SEARCH_BY_TITLE':
-            return state - 1;
         case 'UPDATE_VIDEO_LIST':
-            return Object.assign({}, {
-                value: state.value,
-                searchBy: state.searchBy,
-                sortBy: state.sortBy,
-                videoList: action.videoList
-            });
-
+            return {...state, videoList: action.videoList};
 
         case 'UPDATE_SORT_BY':
-            return Object.assign({}, {
-                value: state.value,
-                searchBy: state.searchBy,
-                sortBy: action.sortBy,
-                videoList: state.videoList
-            });
+            return {...state, sortBy: action.sortBy};
 
         case 'UPDATE_SEARCH_BY':
-            return Object.assign({}, {
-                value: state.value,
-                searchBy: action.searchBy,
-                sortBy: state.sortBy,
-                videoList: state.videoList
-            });
+            return {...state,  searchBy: action.searchBy};
+
         case 'UPDATE_SEARCH_QUERY':
-            return Object.assign({}, {
-                value: action.value,
-                searchBy: state.searchBy,
-                sortBy: state.sortBy,
-                videoList: state.videoList
-            });
+            return {...state,  value: action.value};
 
         default :
             return state;
@@ -47,17 +28,9 @@ const searchReducer = (state = {value: '', searchBy: 'title', sortBy: 'release_d
 };
 
 const videoApp = combineReducers({
-    searchReducer: searchReducer
+    searchReducer,
+    form
 });
 
 export const store = createStore(searchReducer);
-
-
-/*const render = () => {
- document.body.innerText = store.getState();
- }*/
-/*
- store.subscribe(  render());
- render();
-*/
 
