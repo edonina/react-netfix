@@ -6,9 +6,6 @@
   "scripts": {
     "start": "webpack-dev-server --hot",
     "ssr": "node ./server.js",
-    "start-server": "webpack --progress && node server",
-    "production": "webpack -p --progress && node server",
-    "ssr2": "node server2",
     "test": "jest"
   },
   "repository": {
