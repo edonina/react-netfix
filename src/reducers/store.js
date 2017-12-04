@@ -8,7 +8,7 @@ const initialState = {
     videoList: []
 };
 
-const searchReducer = (state : initialState, action) => {
+const searchReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'UPDATE_VIDEO_LIST':
             return {...state, videoList: action.videoList};
