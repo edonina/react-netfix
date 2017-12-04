@@ -5,7 +5,7 @@ import { Footer } from './components/footer/Footer.jsx';
 
 import { renderRoutes } from 'react-router-config';
 
-export const AppPage = ({route}) => {
+export const AppPage = ({children}) => {
     return (
         <div>
             <Header />
