@@ -5,14 +5,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-
     entry: path.resolve(__dirname, ``, `src/server/index.js`),
-   /* entry:  {
-        server: [
-            path.resolve(__dirname, ``, `src/server/index.js`),
-        ]
-    },*/
-
     output: {
         filename: 'compiled.js",',
         path:  path.resolve(__dirname,'', 'dist'),
@@ -21,19 +14,13 @@ module.exports = {
         libraryTarget:'commonjs2'
 
     },
-
-
     target: 'node',
     externals: [nodeExternals()],
     devtool: 'eval',
-    //devtool: 'source-map',
 
     resolve: {
         extensions: ['.js', '.jsx']
     },
-
-
-
     module: {
         rules: [{
             test: /\.jsx?$/,
@@ -50,28 +37,5 @@ module.exports = {
                 loader: 'css-loader/locals'
             },
         ]
-    },
-
-   /* plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
-        new webpack.optimize.UglifyJsPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ['vendor'],
-            minChunks: 2,
-        }),
-        new webpack.DefinePlugin({
-            PRODUCTION: false,
-            BROWSER_SUPPORTS_HTML5: false,
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Test',
-            hash: true,
-            template: './index.html'
-        }),
-        new ExtractTextPlugin({
-            filename: 'style.css',
-            allChunks: true
-        })
-    ]*/
+    }
 };
