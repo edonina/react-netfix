@@ -3,19 +3,16 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = {
+const clientConfig = {
 
     context: path.resolve(__dirname, 'src'),
 
     entry: {
         app: [
-            /*'react-hot-loader/patch',
-            'webpack-hot-middleware/client',*/
+            'react-hot-loader/patch',
+            'webpack-hot-middleware/client',
             './index.jsx'
         ],
-       /* home: "./Home",
-        order: "./Order",
-        profile: "./Profile",*/
         vendor: ["lodash"]
     },
 
@@ -56,7 +53,7 @@ module.exports = {
     },
 
     plugins: [
-       /* new webpack.HotModuleReplacementPlugin(),*/
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
@@ -78,3 +75,5 @@ module.exports = {
         })
     ]
 };
+
+module.exports = [clientConfig, serverConfig];

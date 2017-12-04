@@ -2,34 +2,29 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
 
-    context: path.resolve(__dirname, 'src'),
-
-    entry: {
-        app: [
-            /*'react-hot-loader/patch',
-            'webpack-hot-middleware/client',*/
-            './index.jsx'
-        ],
-       /* home: "./Home",
-        order: "./Order",
-        profile: "./Profile",*/
-        vendor: ["lodash"]
-    },
+    entry: path.resolve(__dirname, ``, `src/server/index.js`),
+   /* entry:  {
+        server: [
+            path.resolve(__dirname, ``, `src/server/index.js`),
+        ]
+    },*/
 
     output: {
-        filename: '[name].js',
-        path:  path.resolve(__dirname, 'dist'),
-        publicPath : '/'
-    },
-    devServer: {
-        historyApiFallback: true,
-        inline: true,
-        port: 3000
+        filename: 'compiled.js",',
+        path:  path.resolve(__dirname,'', 'dist'),
+        publicPath : '/dist/',
+        library: 'app',
+        libraryTarget:'commonjs2'
+
     },
 
+
+    target: 'node',
+    externals: [nodeExternals()],
     devtool: 'eval',
     //devtool: 'source-map',
 
@@ -37,26 +32,28 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
 
+
+
     module: {
         rules: [{
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
             options: {
-                plugins: ["transform-react-jsx"]/*,
-                 presets: ['env']*/
+                plugins: ["transform-react-jsx"],
+                presets: ['es2015', 'react', 'stage-2']
             }
-        }, {
-            test: /\.scss/,
-            use: ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: ['css-loader', 'sass-loader']
-            })
-        }]
+        },
+
+            {
+                test: /\.scss$/,
+                loader: 'css-loader/locals'
+            },
+        ]
     },
 
-    plugins: [
-       /* new webpack.HotModuleReplacementPlugin(),*/
+   /* plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
@@ -76,5 +73,5 @@ module.exports = {
             filename: 'style.css',
             allChunks: true
         })
-    ]
+    ]*/
 };

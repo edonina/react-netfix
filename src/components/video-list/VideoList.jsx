@@ -23,6 +23,8 @@ export class VideoList extends React.Component {
             this.queryUrl = `https://api.themoviedb.org/3/search/movie${this.api_key}&query=${this.query}`;
          }
 
+        console.log("====", store.getState());
+
         if(store.getState().searchBy == 'year'){
             this.queryUrl += '&year=2015'
         }
@@ -43,6 +45,7 @@ export class VideoList extends React.Component {
     }
 
     componentWillReceiveProps(newProps){
+        console.log("----", newProps.props.match.params.query)
         if(newProps.props.match.params.query){
             this.queryUrl = `https://api.themoviedb.org/3/search/movie${this.api_key}&query=${newProps.props.match.params.query}`;
         }else{
@@ -52,9 +55,13 @@ export class VideoList extends React.Component {
         this.getVideos();
     }
 
+    static fetchData(dispatch){
+        return dispatch(getVideos());
+    }
+
     getVideos() {
-        console.log("==-------2", this.queryUrl);
-        axios.get(this.queryUrl)
+      //  return axios.get(this.queryUrl)
+         axios.get(this.queryUrl)
             .then((response) => {
                 let sortedList = response.data.results.sort(this.sortBy(store.getState().sortBy, true))
                 this.setState({videoList: sortedList});

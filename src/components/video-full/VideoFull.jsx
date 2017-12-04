@@ -9,7 +9,6 @@ import { VideoDescription } from './VideoDescription';
 import { VideoDirector } from './VideoDirector';
 import { VideoGenre } from './VideoGenre';
 
-import PlayerAPI from '../../api.js'
 
 export const VideoFull = (props) =>  {
     console.log('9999', props.video.original_title)
