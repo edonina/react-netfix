@@ -8,7 +8,7 @@ const initialState = {
     videoList: []
 };
 
-export const searchReducer = (state = initialState, action) => {
+const searchReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'UPDATE_VIDEO_LIST':
             return {...state, videoList: action.videoList};
@@ -27,5 +27,9 @@ export const searchReducer = (state = initialState, action) => {
     }
 };
 
-export const store = createStore(searchReducer);
+const videoApp = combineReducers({
+    searchReducer,
+    form
+});
 
+export const store = createStore(searchReducer);
