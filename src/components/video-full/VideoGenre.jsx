@@ -1,17 +1,15 @@
 import React from 'react';
 
 
-export class VideoGenre extends React.Component {
+export const VideoGenre = ({genres = []}) => {
 
-    constructor(...args) {
-        super(...args);
-    }
+    let genresList = genres.map((genre) => {
+       return <span key={genre.id}>{genre.name} </span>
+    });
 
-    render() {
-        return (
-            <p className="video-full-genre">
-                Oscar-winning Movies
-            </p>
-        )
-    }
+    return (
+        <p className="video-full-genre">
+            {genresList}
+        </p>
+    )
 }

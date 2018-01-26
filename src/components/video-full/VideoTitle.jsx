@@ -1,17 +1,11 @@
 import React from 'react';
 
 
-export class VideoTitle extends React.Component {
+export const VideoTitle = ({title})=> {
 
-    constructor(...args) {
-        super(...args);
-    }
-
-    render() {
-        return (
-            <h1 className="video-full-title">
-                Pulp fiction
-            </h1>
-        )
-    }
+    return (
+        <h1 className="video-full-title">
+            {title}
+        </h1>
+    )
 }

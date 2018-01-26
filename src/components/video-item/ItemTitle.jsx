@@ -1,17 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 
-export class ItemTitle extends React.Component {
-
-    constructor(...args) {
-        super(...args);
-    }
-
-    render() {
-        return (
-            <span className="video-item-title">
-                Pulp fiction
+export const ItemTitle = ({title, link}) => {
+    return (
+        <span className="video-item-title">
+                <Link to={link}>{title}</Link>
             </span>
-        )
-    }
+    )
 }

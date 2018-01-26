@@ -1,15 +1,24 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
+import { store } from '../../reducers/store';
 
 
-export class SearchInput extends React.Component {
-
-    constructor(...args) {
-        super(...args);
+export const SearchInput = ()=> {
+    const handleChange = (event) =>{
+        store.dispatch({
+            state: store.getState(),
+            value: event.target.value,
+            type: 'UPDATE_SEARCH_QUERY'
+        });
+       // console.log('state',store.getState());
     }
 
-    render() {
-        return (
-            <input type="search" className="search-input"/>
-        )
-    }
+    return (
+        <div>
+            <input type="search"
+                   className="search-input"
+                   onChange={handleChange}
+            />
+        </div>
+    )
 }

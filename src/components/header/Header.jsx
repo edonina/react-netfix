@@ -1,5 +1,6 @@
 import React from 'react';
 import * as s from './header.scss';
+import { Link } from 'react-router-dom'
 
 export class Header extends React.Component {
 
@@ -9,7 +10,16 @@ export class Header extends React.Component {
 
     render() {
         return (
-           <div className="logo">netflixroulette</div>
+            <div className="header">
+                <div className="logo">netflixroulette</div>
+                <nav>
+                    <ul>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/video'>Video</Link></li>
+
+                    </ul>
+                </nav>
+            </div>
         )
     }
 }

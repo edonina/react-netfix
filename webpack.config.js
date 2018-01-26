@@ -9,9 +9,9 @@ module.exports = {
 
     entry: {
         app: [
-            'react-hot-loader/patch',
-            'webpack-hot-middleware/client',
-            './index.jsx',
+            /*'react-hot-loader/patch',
+            'webpack-hot-middleware/client',*/
+            './index.jsx'
         ],
        /* home: "./Home",
         order: "./Order",
@@ -21,7 +21,13 @@ module.exports = {
 
     output: {
         filename: '[name].js',
-        path:  path.resolve(__dirname, 'dist')
+        path:  path.resolve(__dirname, 'dist'),
+        publicPath : '/'
+    },
+    devServer: {
+        historyApiFallback: true,
+        inline: true,
+        port: 3000
     },
 
     devtool: 'eval',
@@ -50,11 +56,11 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        /*new webpack.HotModuleReplacementPlugin(),*/
         new webpack.NamedModulesPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
-            name: ["common", 'vendor'],
+            name: ['vendor'],
             minChunks: 2,
         }),
         new webpack.DefinePlugin({

@@ -1,17 +1,6 @@
 import React from 'react';
 
 
-export class SearchResultsCount extends React.Component {
-
-    constructor(...args) {
-        super(...args);
-    }
-
-    render() {
-        return (
-            <div>
-                7 movies found
-            </div>
-        )
-    }
-}
+export const SearchResultsCount = ({itemsNumber}) => (
+    <div>{itemsNumber}</div>
+);

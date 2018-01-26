@@ -1,19 +1,22 @@
 import React from 'react';
+import { store } from '../../reducers/store';
 
 
-export class SearchFilter extends React.Component {
-
-    constructor(...args) {
-        super(...args);
+export const SearchFilter = () => {
+    const toggleSearchBy = (param) => {
+        store.dispatch({
+            state: store.getState(),
+            searchBy: param,
+            type: 'UPDATE_SEARCH_BY'
+        });
+        console.log(store.getState());
     }
 
-    render() {
-        return (
-            <div className="search-filter">
-                <p>Search by:</p>
-                <button className="filter-btn">Title</button>
-                <button className="filter-btn">Director</button>
-            </div>
-        )
-    }
+    return (
+        <div className="search-filter">
+            <p>Search by:</p>
+            <button className="filter-btn" onClick={()=>{toggleSearchBy('title')}}>Title</button>
+            <button className="filter-btn" onClick={()=>{toggleSearchBy('year')}}>2015</button>
+        </div>
+    )
 }

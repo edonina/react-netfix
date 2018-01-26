@@ -1,15 +1,15 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
+import { store } from '../../reducers/store';
 
 
-export class SearchButton extends React.Component {
-
-    constructor(...args) {
-        super(...args);
-    }
-
-    render() {
-        return (
-            <button type="submit" className="search-button">Search</button>
-        )
-    }
-}
+export const SearchButton = withRouter(({history}) => (
+    <button
+        type="submit" className="search-button"
+        onClick={() => {
+            history.push('/search/'+ store.getState().value);
+        }}
+    >
+        Search
+    </button>
+))

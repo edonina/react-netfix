@@ -1,17 +1,11 @@
 import React from 'react';
 
+export const ItemImage = ({src}) => {
+    const fullPath= 'https://image.tmdb.org/t/p/w300'+ src;
 
-export class ItemImage extends React.Component {
-
-    constructor(...args) {
-        super(...args);
-    }
-
-    render() {
-        return (
-            <div className="video-item-image">
-                <img src="#" />
-            </div>
-        )
-    }
+    return (
+        <div className="video-item-image">
+            <img width="100%" src={fullPath} />
+        </div>
+    )
 }
