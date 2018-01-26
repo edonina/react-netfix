@@ -4,8 +4,6 @@ import { VideoItem } from '../video-item/VideoItem.jsx';
 import * as axios from 'axios';
 import { store } from '../../reducers/store';
 
-
-
 export class VideoList extends React.Component {
     constructor(...args) {
         super(...args);
@@ -18,10 +16,9 @@ export class VideoList extends React.Component {
             videoList: []
         };
 
-
-         if(this.query){
+        if(this.query){
             this.queryUrl = `https://api.themoviedb.org/3/search/movie${this.api_key}&query=${this.query}`;
-         }
+        }
 
         if(store.getState().searchBy == 'year'){
             this.queryUrl += '&year=2015'
@@ -52,9 +49,13 @@ export class VideoList extends React.Component {
         this.getVideos();
     }
 
+    static fetchData(dispatch){
+        return dispatch(getVideos());
+    }
+
     getVideos() {
-        console.log("==-------2", this.queryUrl);
-        axios.get(this.queryUrl)
+      //  return axios.get(this.queryUrl)
+         axios.get(this.queryUrl)
             .then((response) => {
                 let sortedList = response.data.results.sort(this.sortBy(store.getState().sortBy, true))
                 this.setState({videoList: sortedList});

@@ -13,9 +13,6 @@ module.exports = {
             'webpack-hot-middleware/client',*/
             './index.jsx'
         ],
-       /* home: "./Home",
-        order: "./Order",
-        profile: "./Profile",*/
         vendor: ["lodash"]
     },
 
@@ -31,7 +28,6 @@ module.exports = {
     },
 
     devtool: 'eval',
-    //devtool: 'source-map',
 
     resolve: {
         extensions: ['.js', '.jsx']
@@ -43,8 +39,7 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel-loader',
             options: {
-                plugins: ["transform-react-jsx"]/*,
-                 presets: ['env']*/
+                plugins: ["transform-react-jsx"]
             }
         }, {
             test: /\.scss/,
@@ -56,7 +51,7 @@ module.exports = {
     },
 
     plugins: [
-        /*new webpack.HotModuleReplacementPlugin(),*/
+       /* new webpack.HotModuleReplacementPlugin(),*/
         new webpack.NamedModulesPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({

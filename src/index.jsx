@@ -1,59 +1,30 @@
 import React from 'react';
-/*import { AppContainer } from 'react-hot-loader';*/
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import { App } from './App';
+import { Provider } from 'react-redux';
+import { renderRoutes } from 'react-router-config';
+import { routes } from './routes';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App from './App';
 
-import { SearchResults } from './pages/SearchResults.jsx';
-import { SearchPage } from './pages/SearchPage.jsx';
+import configureStore from './configureStore';
 
-import { FullVideoPage } from './pages/FullVideoPage';
-import { VideoList } from './components/video-list/VideoList';
-
-import { EmptyResults } from './components/empty-results/EmptyResults';
-
+const store = configureStore( window.PRELOADED_STATE);
+console.log("77777777:",store.getState());
+delete window.PRELOADED_STATE;
 
 const render = () => {
-    ReactDom.render((
-        <Router>
-            <App>
-
-                <Switch>
-
-
-                    <Route exact path='/' render={(props) => (
-                        <SearchPage props={props}  />
-                    )}/>
-
-                    <Route exact path='/search' render={(props) => (
-                        <SearchPage props={props} />
-                    )}/>
-
-                    <Route path="/search/:query" render={(props) => (
-                        <SearchResults props={props}  />
-                    )}/>
-
-                    <Route exact path='/video' render={(props) => (
-                        <VideoList props={props} />
-                    )}/>
-
-                    <Route path="/video/:id" component={FullVideoPage} />
-
-
-
-
-                    <Route path="*" component={EmptyResults}/>
-
-                </Switch>
-            </App>
-        </Router>
+    const context = {};
+    ReactDOM.hydrate((
+        <Provider store={store}>
+            <Router context={context}>
+             <App />
+             </Router>
+        </Provider>
     ), document.getElementById('app'));
 }
 
 render();
-/*
 
  if (module.hot) {
- module.hot.accept('./App', render);
+    module.hot.accept('./App', render);
  }
- */

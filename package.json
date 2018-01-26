@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server --hot",
+    "ssr": "node ./server.js",
     "test": "jest"
   },
   "repository": {
@@ -20,12 +21,17 @@
   "dependencies": {
     "enzyme": "^3.1.1",
     "enzyme-adapter-react-16": "^1.0.4",
-    "express": "^4.15.4",
+    "express": "^4.16.2",
     "jest-enzyme": "^4.0.1",
+    "memory-fs": "^0.4.1",
     "react": "^16.0.0",
+    "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
     "redux-form": "^7.1.2",
-    "webpack": "^3.5.6"
+    "redux-thunk": "^2.2.0",
+    "require-from-string": "^2.0.1",
+    "webpack": "^3.5.6",
+    "webpack-node-externals": "^1.6.0"
   },
   "devDependencies": {
     "axios": "0.17.0",
@@ -57,5 +63,4 @@
     "webpack-dev-server": "^2.9.4",
     "webpack-hot-middleware": "^2.19.1"
     "style-loader": "0.19.1"
-  }
 }

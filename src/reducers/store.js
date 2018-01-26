@@ -33,4 +33,3 @@ const videoApp = combineReducers({
 });
 
 export const store = createStore(searchReducer);
-
