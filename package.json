@@ -59,6 +59,6 @@
     "sass-loader": "^6.0.6",
     "webpack-dev-server": "^2.9.4",
     "webpack-hot-middleware": "^2.19.1",
-    "style-loader": "0.19.1"
+    "style-loader": "0.20.1"
   }
 }
