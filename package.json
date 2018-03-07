@@ -44,7 +44,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "2.30.1",
     "css-loader": "0.28.7",
-    "webpack-dev-middleware": "^2.0.4",
+    "webpack-dev-middleware": "^3.0.1",
     "react": "^16.2.0",
     "jest": "^22.1.4",
     "lodash": "^4.17.4",
